@@ -6,7 +6,7 @@
 
   <groupId>com.github.driversti.erepublik</groupId>
   <artifactId>telegram-spring-boot-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 
   <properties>
     <java.version>17</java.version>
@@ -14,6 +14,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <spring-boot.version>3.0.2</spring-boot.version>
+    <lombok.version>RELEASE</lombok.version>
     <java-telegram-bot-api.varsion>6.3.0</java-telegram-bot-api.varsion>
   </properties>
 
@@ -22,6 +23,17 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
       <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
+      <version>${spring-boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.github.pengrad</groupId>
