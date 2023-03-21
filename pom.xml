@@ -6,23 +6,40 @@
 
   <groupId>com.github.driversti.erepublik</groupId>
   <artifactId>telegram-spring-boot-starter</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
 
   <properties>
     <java.version>17</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring-boot.version>3.0.2</spring-boot.version>
-    <lombok.version>RELEASE</lombok.version>
-    <java-telegram-bot-api.varsion>6.3.0</java-telegram-bot-api.varsion>
+    <spring-boot.version>3.0.4</spring-boot.version>
+    <lombok.version>1.18.26</lombok.version>
+    <java-telegram-bot-api.varsion>6.5.0</java-telegram-bot-api.varsion>
+    <snakeyaml.version>2.0</snakeyaml.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>${snakeyaml.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
       <version>${spring-boot.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
